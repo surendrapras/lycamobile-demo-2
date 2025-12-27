@@ -20,8 +20,351 @@
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards:not(.selection-radio):not(.sim-type):not(.pricing-summary):not(.plan-features):not(.trust-badges) > ul > li img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* Selection Radio Variant - Radio-style selection cards */
+.cards.selection-radio > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cards.selection-radio > ul > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.cards.selection-radio > ul > li:hover {
+  border-color: #1976d2;
+  background-color: #f5f9ff;
+}
+
+.cards.selection-radio > ul > li .cards-card-body {
+  margin: 0;
+  flex: 1;
+}
+
+.cards.selection-radio > ul > li .cards-card-body p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.cards.selection-radio > ul > li .cards-card-image {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-left: 16px;
+}
+
+.cards.selection-radio > ul > li .cards-card-image img {
+  width: 24px;
+  height: 24px;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+/* Selected state - when card has blue check icon */
+.cards.selection-radio > ul > li:has(img[alt="check"]) {
+  border-color: #1976d2;
+  background-color: #f0f7ff;
+}
+
+/* SIM Type Variant - Horizontal selection cards with icons */
+.cards.sim-type > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cards.sim-type > ul > li {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  flex: 1;
+  min-width: 180px;
+  gap: 12px;
+}
+
+.cards.sim-type > ul > li:hover {
+  border-color: #1976d2;
+}
+
+/* First cell - icon and name (classified as cards-card-image when it has picture) */
+.cards.sim-type > ul > li > div:first-child {
+  margin: 0;
+  flex: 1;
+}
+
+.cards.sim-type > ul > li > div:first-child p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.cards.sim-type > ul > li > div:first-child picture {
+  display: flex;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.cards.sim-type > ul > li > div:first-child img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* Second cell - status text like "selected" */
+.cards.sim-type > ul > li > div:nth-child(2) {
+  margin: 0;
+}
+
+.cards.sim-type > ul > li > div:nth-child(2) p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Third cell - check/uncheck icon on the right */
+.cards.sim-type > ul > li > div:last-child {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+}
+
+.cards.sim-type > ul > li > div:last-child img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Selected state for SIM type */
+.cards.sim-type > ul > li:has(img[alt="check"]) {
+  border-color: #1976d2;
+  background-color: #f0f7ff;
+}
+
+/* Pricing Summary Variant */
+.cards.pricing-summary > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.cards.pricing-summary > ul > li {
+  padding: 12px 16px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.cards.pricing-summary > ul > li .cards-card-body {
+  margin: 0;
+}
+
+.cards.pricing-summary > ul > li .cards-card-body:first-child {
+  flex: 1;
+}
+
+.cards.pricing-summary > ul > li .cards-card-body:last-child {
+  text-align: right;
+}
+
+.cards.pricing-summary > ul > li .cards-card-body p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.cards.pricing-summary > ul > li .cards-card-body p del {
+  color: #999;
+  margin-right: 6px;
+}
+
+.cards.pricing-summary > ul > li .cards-card-body p strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Second row - subtext styling */
+.cards.pricing-summary > ul > li:nth-child(2) .cards-card-body p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Third row - Remove icon only */
+.cards.pricing-summary > ul > li:last-child {
+  justify-content: flex-start;
+  padding-top: 8px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.cards.pricing-summary > ul > li .cards-card-image {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.cards.pricing-summary > ul > li .cards-card-image img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Hide the text cell in the remove row - only show icon */
+.cards.pricing-summary > ul > li:last-child .cards-card-body {
+  display: none;
+}
+
+/* Plan Features Variant */
+.cards.plan-features > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.cards.plan-features > ul > li {
+  padding: 12px 16px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cards.plan-features > ul > li .cards-card-image {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.cards.plan-features > ul > li .cards-card-image img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.cards.plan-features > ul > li .cards-card-body {
+  margin: 0;
+  flex: 1;
+}
+
+.cards.plan-features > ul > li .cards-card-body p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Trust Badges Variant */
+.cards.trust-badges > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.cards.trust-badges > ul > li {
+  padding: 12px 16px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cards.trust-badges > ul > li .cards-card-image {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.cards.trust-badges > ul > li .cards-card-image img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.cards.trust-badges > ul > li .cards-card-body {
+  margin: 0;
+  flex: 1;
+}
+
+.cards.trust-badges > ul > li .cards-card-body p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.cards.trust-badges > ul > li .cards-card-body a {
+  color: #1976d2;
+  text-decoration: none;
+  /* Reset button styles */
+  display: inline;
+  background: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.cards.trust-badges > ul > li .cards-card-body a:hover {
+  text-decoration: underline;
+  background: none;
+  background-color: transparent;
+}
+
+/* Text-only rows (no icon) - smaller font, gray color */
+.cards.trust-badges > ul > li:not(:has(.cards-card-image)) .cards-card-body:first-child:empty {
+  display: none; /* Hide empty first cell */
+}
+
+.cards.trust-badges > ul > li:not(:has(.cards-card-image)) .cards-card-body {
+  padding-left: 36px; /* Align with text that has icons (24px icon + 12px gap) */
+}
+
+.cards.trust-badges > ul > li:not(:has(.cards-card-image)) .cards-card-body p {
+  font-size: 13px;
+  color: #666;
 }

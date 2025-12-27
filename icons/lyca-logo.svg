@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48" width="120" height="48">
+  <text x="0" y="36" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#333">Lyca</text>
+  <path d="M95 8 L105 8 L105 18 Q105 28 95 28 L95 18 Q95 8 105 8" fill="#00d4aa"/>
+  <text x="0" y="46" font-family="Arial, sans-serif" font-size="10" fill="#1976d2">Mobile</text>
+</svg>

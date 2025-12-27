@@ -13,8 +13,105 @@ footer .footer p {
   margin: 0;
 }
 
+/* Footer link columns - uses CSS columns for multi-column layout */
+footer .footer > div > div:first-child {
+  column-count: 2;
+  column-gap: 32px;
+}
+
+footer .footer > div > div:first-child h2 {
+  break-after: avoid;
+}
+
+footer .footer > div > div:first-child ul {
+  break-inside: avoid;
+}
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
   }
+
+  footer .footer > div > div:first-child {
+    column-count: 5;
+  }
+}
+
+/* Footer headings */
+footer h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+footer h2 strong {
+  font-weight: 600;
+}
+
+/* Footer lists */
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+footer ul li {
+  margin: 8px 0;
+  color: #666;
+}
+
+footer ul li a {
+  color: #666;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+/* App badges section */
+footer .footer > div > div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0;
+  padding-top: 32px;
+  border-top: 1px solid #ddd;
+}
+
+footer .footer > div > div:nth-child(2) p {
+  margin: 0;
+}
+
+footer .footer > div > div:nth-child(2) img {
+  max-width: 180px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Copyright section */
+footer .footer > div > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+  margin-top: 24px;
+}
+
+footer .footer > div > div:last-child p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+}
+
+footer .footer > div > div:last-child img {
+  width: auto;
+  height: 28px;
 }

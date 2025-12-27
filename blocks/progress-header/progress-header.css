@@ -1,0 +1,99 @@
+/* Hide main header when progress-header is present */
+body:has(.progress-header) header {
+  display: none;
+}
+
+.progress-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  padding: 16px 24px;
+}
+
+.progress-header .progress-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.progress-header .progress-logo {
+  text-align: center;
+}
+
+.progress-header .progress-logo a {
+  display: inline-block;
+  line-height: 0;
+}
+
+.progress-header .progress-logo img {
+  width: 92px;
+  height: auto;
+}
+
+.progress-header .progress-steps-wrapper {
+  width: 100%;
+}
+
+.progress-header .progress-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.progress-header .progress-step {
+  text-align: center;
+}
+
+.progress-header .progress-step p,
+.progress-header .progress-step a {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #999;
+  text-decoration: none;
+}
+
+.progress-header .progress-step.active p,
+.progress-header .progress-step.active a {
+  color: #333;
+  font-weight: 600;
+}
+
+.progress-header .progress-step.completed p,
+.progress-header .progress-step.completed a {
+  color: #08dc7d;
+}
+
+.progress-header .progress-step a:hover {
+  text-decoration: underline;
+}
+
+.progress-header .progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-header .progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #08dc7d 0%, #006ae0 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+@media (width >= 900px) {
+  .progress-header {
+    padding: 20px 32px;
+  }
+
+  .progress-header .progress-step p {
+    font-size: 15px;
+  }
+}

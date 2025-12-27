@@ -1,0 +1,167 @@
+.form {
+  margin: 0;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form .form-field-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form label .required {
+  color: #e53935;
+  margin-left: 2px;
+}
+
+.form input,
+.form select {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.form input::placeholder {
+  color: #999;
+}
+
+.form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.form .form-button {
+  padding: 12px 24px;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: flex-end;
+}
+
+.form .form-button:hover {
+  background-color: #1565c0;
+}
+
+/* Email verify variant */
+.form.email-verify .form-field-group {
+  align-items: flex-end;
+}
+
+.form.email-verify .form-field:first-child {
+  flex: 2;
+}
+
+/* Consent variant */
+.form.consent .consent-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.form.consent .toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.form.consent .toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.form.consent .toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.form.consent .toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.form.consent .toggle-switch input:checked + .toggle-slider {
+  background-color: #1976d2;
+}
+
+.form.consent .toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(22px);
+}
+
+.form.consent .consent-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.form.consent .consent-text a {
+  color: #1976d2;
+  text-decoration: underline;
+}
+
+/* Checkout details variant - horizontal layout */
+.form.checkout-details .form-field-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .form.checkout-details .form-field-group {
+    grid-template-columns: 100px 1fr 1fr;
+  }
+}

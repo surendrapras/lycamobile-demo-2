@@ -255,3 +255,114 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* Hide metadata block - it's for page metadata only, not display */
+.metadata {
+  display: none;
+}
+
+/* Checkout page two-column layout */
+body:has(.progress-header) main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+body:has(.progress-header) main > div {
+  margin: 16px 0;
+}
+
+/* First section with progress header and title - full width */
+body:has(.progress-header) main > div:first-child {
+  margin-bottom: 24px;
+}
+
+@media (width >= 900px) {
+  body:has(.progress-header) main {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    grid-auto-rows: auto;
+    gap: 24px 32px;
+    padding: 32px;
+  }
+
+  body:has(.progress-header) main > div {
+    margin: 0;
+    grid-column: 1;
+  }
+
+  /* First section spans full width */
+  body:has(.progress-header) main > div:first-child {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  /* Form sections in left column with explicit row numbers */
+  body:has(.progress-header) main > div:nth-child(2) { grid-row: 2; }
+  body:has(.progress-header) main > div:nth-child(3) { grid-row: 3; }
+  body:has(.progress-header) main > div:nth-child(4) { grid-row: 4; }
+  body:has(.progress-header) main > div:nth-child(5) { grid-row: 5; }
+  body:has(.progress-header) main > div:nth-child(6) { grid-row: 6; }
+
+  /* Order summary sections go to right column (column 2) starting at row 2 */
+  body:has(.progress-header) main > div:has(h2#order-summary) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  body:has(.progress-header) main > div:has(h3#months-unlimited-plus) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  body:has(.progress-header) main > div:has(h3#contract-information) {
+    grid-column: 2;
+    grid-row: 4 / 7;
+  }
+
+  /* Section metadata divs should not display */
+  body:has(.progress-header) main > div:has(.section-metadata) {
+    display: none;
+  }
+}
+
+/* Order summary card styling */
+body:has(.progress-header) .cards.pricing-summary {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+body:has(.progress-header) .cards.pricing-summary > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+body:has(.progress-header) .cards.pricing-summary > div:last-child {
+  border-bottom: none;
+}
+
+body:has(.progress-header) .cards.plan-features,
+body:has(.progress-header) .cards.trust-badges {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+body:has(.progress-header) .cards.plan-features > div,
+body:has(.progress-header) .cards.trust-badges > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+body:has(.progress-header) .cards.plan-features img,
+body:has(.progress-header) .cards.trust-badges img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}

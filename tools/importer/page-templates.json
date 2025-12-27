@@ -1,0 +1,24 @@
+{
+  "templates": [
+    {
+      "name": "lycamobile-checkout",
+      "urls": ["https://www.lycamobile.co.uk/paymonthly/en/checkout/"],
+      "description": "Lycamobile SIM only deals checkout page with pricing plans, features, and FAQs",
+      "blocks": [
+        {
+          "name": "cards-pricing",
+          "instances": [".PayMonthlyPage_plansListContainer__CxdXX"]
+        },
+        {
+          "name": "columns-features",
+          "instances": [".WhyLyca_main_container__lRc68"],
+          "section": "light-grey"
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [".FAQ_container__JzOJU"]
+        }
+      ]
+    }
+  ]
+}

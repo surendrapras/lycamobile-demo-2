@@ -1,0 +1,39 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2025-12-26T06:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.lycamobile.co.uk/paymonthly/en/checkout/",
+    "originPage": "SIM only deals checkout page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "faq",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "question + answer",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "FAQ sections",
+      "help pages",
+      "support documentation"
+    ],
+    "notSuitableFor": [
+      "image galleries",
+      "product showcases",
+      "navigation menus"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/paymonthly/en/checkout/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-26T06:10:00.000Z"
+  }
+}

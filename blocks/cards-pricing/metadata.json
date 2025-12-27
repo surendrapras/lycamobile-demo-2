@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-pricing",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-26T06:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.lycamobile.co.uk/paymonthly/en/checkout/",
+    "originPage": "SIM only deals checkout page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "comfortable",
+    "purpose": "pricing-plans",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "badge + heading + price + features + cta",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "pricing plan pages",
+      "product comparison pages",
+      "subscription tier displays"
+    ],
+    "notSuitableFor": [
+      "image gallery pages",
+      "team member pages",
+      "blog article cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/paymonthly/en/checkout/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-26T06:10:00.000Z"
+  }
+}

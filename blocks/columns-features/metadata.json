@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-features",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-26T06:10:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.lycamobile.co.uk/paymonthly/en/checkout/",
+    "originPage": "SIM only deals checkout page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light-grey",
+    "density": "comfortable",
+    "purpose": "feature-highlights",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + heading + paragraph",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlight sections",
+      "benefit lists",
+      "why choose us sections"
+    ],
+    "notSuitableFor": [
+      "image galleries",
+      "product comparisons",
+      "detailed content sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/paymonthly/en/checkout/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-26T06:10:00.000Z"
+  }
+}
